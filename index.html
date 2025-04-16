@@ -1,0 +1,383 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Invitación XV Años</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    
+  </head>
+  <body>
+    <div id="cortinilla">
+      <div class="sobre-elegante">
+        <div class="flap" id="flap"></div>
+        <div class="carta">
+          <p class="mensaje-sobre"> <img src="media/stamp.png" alt="" srcset=""> </p>
+        </div>
+      </div>
+      <button id="btnInvitacion">Ir a la invitación</button>
+    </div>
+
+    <div class="fondo-fijo">
+      <div class="encabezado-xv">
+        <!-- Esquinas superiores -->
+        <img src="media/arbol.png" alt="Decoración izquierda" class="decoracion esquina-izquierda">
+        <img src="media/circle.png" alt="Decoración derecha" class="decoracion esquina-derecha">
+      
+        <!-- Centro -->
+        <div class="centro-xv">
+          <img src="media/moon.png" alt="Marco central" class="marco-circulo">
+          <h1 class="titulo-xv">Mis XV Kim</h1>
+          <img src="media/mariposa2.png" alt="Mariposa 1" class="mariposa mariposa-izq">
+          <img src="media/mariposa.png" alt="Mariposa 2" class="mariposa mariposa-der">
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content" id="contenidoPrincipal" style="display: none">
+     
+      <div class="container">
+        <div class="texto-clic">
+          <p>Da clic para escuchar la canción</p>
+        </div>
+        <div class="reproductor">
+          <div class="player">
+            <div class="player__controls">
+              <div class="player__btn player__btn--small" id="previous">
+                <i class="fas fa-arrow-left"></i>
+              </div>
+              <h5 class="player__title">playing now</h5>
+              <div class="player__btn player__btn--small" id="icon-menu">
+                <i class="fas fa-bars"></i>
+              </div>
+            </div>
+            <div class="player__album">
+              <img
+                src="media/album.jpeg"
+                alt="Album Cover"
+                class="player__img"
+                loading="lazy"
+                
+              />
+            </div>
+
+            <h2 class="player__artist">BTS</h2>
+            <h3 class="player__song">Butterfly</h3>
+
+            <input
+              type="range"
+              value="20"
+              min="0"
+              class="player__level"
+              id="range"
+            />
+            <div class="audio-duration">
+              <div class="start">00:01</div>
+              <div class="end">03:58</div>
+            </div>
+
+            <audio class="player__audio" controls id="audio" loop>
+              <source src="media/BTS - Butterfly.mp3" type="audio/mp3" />
+            </audio>
+
+            <div class="player__controls">
+              <div class="player__btn player__btn--medium" id="backward">
+                <i class="fas fa-backward"></i>
+              </div>
+
+              <div class="player__btn player__btn--medium blue play" id="play">
+                <i class="fas fa-play play-btn"></i>
+                <i class="fas fa-pause pause-btn hide"></i>
+              </div>
+
+              <div class="player__btn player__btn--medium" id="forward">
+                <i class="fas fa-forward"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="seccion-compartir">
+            <div class="contenido-compartir">
+              <h2>
+                Con gran emoción quiero compartir este momento tan especial en mi vida
+              </h2>
+              <p>
+                Ha llegado el día en que comienzo una nueva etapa y me llena de
+                alegría poder celebrarlo con las personas que han sido parte de mi
+                historia. Mis XV años son más que una fiesta, son un símbolo de
+                crecimiento, gratitud y sueños que comienzan a tomar forma.
+              </p>
+            </div>
+          </section>
+
+          <section class="seccion-padres-doble">
+            <div class="lado-izquierdo">
+              <div class="ovalo-imagen">
+                <img src="media/paisaje.png" alt="Foto Padres" class="imagen-dentro-ovalo">
+              </div>
+            </div>
+          
+            <div class="lado-derecho">
+              <img src="media/petalos.png" alt="Pétalos" class="petalos-superior">
+              <div class="contenido-padres">
+                <h2>Mis padres</h2>
+                <p>Gerardo Gutiérrez Tenorio</p>
+                <p>Xitlali Susana Romero Meza</p>
+              </div>
+            </div>
+          </section>
+          <section class="padrinos-container">
+            <h3>Mis padrinos</h3>
+            <p>Pedro Velázquez Muñoz</p>
+            <p>Xochitl Guadalupe Romero Meza</p>
+          </section>
+          
+          <div class="calendar">
+            <h3>Agenda la fecha</h3>
+            <section class="calendario">
+                <div class="calendar-container">
+                  <header>
+                    <div class="day">7</div>
+                    <div class="month">Junio</div>
+                  </header>
+              
+                  <table class="calendar">
+                    <thead>
+                      <tr>
+                        <td>Lun</td>
+                        <td>Mar</td>
+                        <td>Mie</td>
+                        <td>Jue</td>
+                        <td>Vie</td>
+                        <td>Sab</td>
+                        <td>Dom</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="prev-month">26</td>
+                        <td class="prev-month">27</td>
+                        <td class="prev-month">28</td>
+                        <td class="prev-month">29</td>
+                        <td class="prev-month">30</td>
+                        <td class="prev-month">31</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td class="current-day">7</td>
+                        <td>8</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                      </tr>
+                      <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                      </tr>
+                      <tr>
+                        <td>30</td>
+                        <td class="next-month">1</td>
+                        <td class="next-month">2</td>
+                        <td class="next-month">3</td>
+                        <td class="next-month">4</td>
+                        <td class="next-month">5</td>
+                        <td class="next-month">6</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              
+                  <div class="ring-left"></div>
+                  <div class="ring-right"></div>
+                </div>
+              </section>
+              
+            <p><strong>Sábado</strong><br />7 de junio de 2025</p>
+            <p><strong>Hora:</strong> 18:00 hrs.</p>
+            <p class="lugar"><strong>Lugar:</strong> Jardín elvi</p>
+          </div>
+        
+          <div class="countdown" id="countdown">
+            <div class="time-box">
+              <div class="count" id="days">00</div>
+              <div class="label">Días</div>
+            </div>
+            <div class="time-box">
+              <div class="count" id="hours">00</div>
+              <div class="label">Horas</div>
+            </div>
+            <div class="time-box">
+              <div class="count" id="minutes">00</div>
+              <div class="label">Min</div>
+            </div>
+            <div class="time-box">
+              <div class="count" id="seconds">00</div>
+              <div class="label">Seg</div>
+            </div>
+          </div>
+
+          <section class="seccion-ubicacion">
+            <div class="ubicacion-overlay">
+              <h2>Contamos con tu asistencia</h2>
+          
+              <div class="info-ubicacion">
+                <p><strong>Lugar:</strong><br> Jardín Elvi</p>
+                <p>
+                  Jacarandas Manzana 108 Lote 21,<br>
+                  Lomas del Bosque, 54765<br>
+                  Cuautitlán Izcalli, Méx.
+                </p>
+          
+                <a href="https://www.google.com/maps/place/Jard%C3%ADn+Elvi,+Jacarandas+Manzana+108+Lote+21,+Lomas+del+Bosque,+54765+Cuautitl%C3%A1n+Izcalli,+M%C3%A9x./data=!4m2!3m1!1s0x85d21c2a139225cf:0x5ea246e47f074d45?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI1LjExLjEYACCenQoqdSw5NDI1OTU1MCw5NDI0MjQ5OSw5NDIyMzI5OSw5NDIxNjQxMyw5NDIxMjQ5Niw5NDIwNzM5NCw5NDIwNzUwNiw5NDIwODUwNiw5NDIxNzUyMyw5NDIxODY1Myw5NDIyOTgzOSw0NzA4NDM5Myw5NDIxMzIwMEICTVg%3D&g_st=aw" 
+                   target="_blank" 
+                   class="boton-ubicacion">
+                  <i class="fas fa-map-marker-alt"></i> Ver ubicación
+                </a>
+              </div>
+            </div>
+            <button class="rsvp-btn" onclick="openRSVP()">
+                Confirmar Asistencia
+              </button>
+      
+          </section>
+          
+          
+          <section class="seccion-vestimenta">
+            <div class="capa-oscura"></div>
+            <div class="contenido-vestimenta">
+              <h2>Vestimenta</h2>
+              <p class="subtitulo">Casual formal</p>
+          
+              <div class="opciones-vestimenta">
+                <!-- Ellas -->
+                <div class="opcion">
+                  <i class="fas fa-venus icono"></i>
+                  <p><strong>Ellas:</strong> Vestido lindo, cómodo...</p>
+                </div>
+          
+                <!-- Ellos -->
+                <div class="opcion">
+                  <i class="fas fa-mars icono"></i>
+                  <p><strong>Ellos:</strong> Traje o camisa con<br>pantalón de vestir</p>
+                </div>
+              </div>
+          
+              <div class="aviso-color">
+                <i class="fas fa-exclamation-circle"></i> Reservar color <strong>lila</strong> para la quinceañera
+              </div>
+            </div>
+          </section>
+          
+          <section class="seccion-regalos">
+            <div class="contenido-regalos">
+              <h2>Mesa de regalos</h2>
+          
+              <div class="iconos-regalo">
+                <i class="fas fa-envelope icono-sobre"></i>
+                <i class="fas fa-gift icono-regalo"></i>
+              </div>
+          
+              <p>
+                El mejor regalo es que estés presente en este día tan esperado,
+                pero si deseas regalarme algo, cualquier detalle de tu parte será bienvenido con mucho cariño. Durante el evento habrá una mesa con sobres disponibles.
+                Ahí podrás dejarme un detalle en efectivo para que pueda ahorrar
+                y comprarme algo especial que me encante.
+              </p>
+          
+              
+
+            </div>
+          
+            <div class="imagen-regalo">
+              <img src="media/lunapetalos.png" alt="Decoración de regalo">
+            </div>
+          </section>
+          
+          <div class="gallery">
+            <h3>Galería de Fotos</h3>
+            <div class="carousel-wrapper">
+              <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+          
+              <div class="carousel-track" id="carousel-track">
+                <div class="carousel-slide">
+                  <img src="media/paisaje.png" alt="Foto 1" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://via.placeholder.com/600x400" alt="Foto 2" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://via.placeholder.com/600x400" alt="Foto 3" />
+                </div>
+              </div>
+          
+              <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+            </div>
+          </div>
+          
+          
+            </div>
+          </div>
+
+      </div>
+
+      <div class="petals" id="petals"></div>
+
+      <div id="rsvp-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeRSVP()">&times;</span>
+          <h2>Confirmar Asistencia</h2>
+          <form id="rsvp-form">
+            <input type="text" id="nombre" placeholder="Tu nombre" required /><br />
+            <input
+              type="number"
+              id="acompanantes"
+              placeholder="Número de acompañantes"
+              min="0"
+              required
+            /><br />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="main.js"></script>
+    .
+  </body>
+</html>
