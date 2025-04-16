@@ -32,15 +32,19 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Modal RSVP
 function openRSVP() {
-  document.getElementById("rsvp-modal").style.display = "block";
+  document.getElementById("rsvp-modal").style.display = "flex";  // Cambiar display a flex
 }
 
 function closeRSVP() {
-  document.getElementById("rsvp-modal").style.display = "none";
+  document.getElementById("rsvp-modal").style.display = "none";  // Ocultar el modal
 }
 
+document.getElementById("rsvp-modal").addEventListener("click", function(event) {
+  if (event.target === this) {
+    closeRSVP();  // Cierra el modal si se hace clic en el fondo
+  }
+});
 
 const audio = document.getElementById("audio");
 const playPause = document.getElementById("play");
