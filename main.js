@@ -80,6 +80,8 @@ document.getElementById('btnInvitacion').addEventListener('click', () => {
         void contenido.offsetWidth;
   
         contenido.classList.add('visible');
+         // 🔊 Reproduce la canción al mostrar el contenido
+      audio.play();
       }, 1000);
     }, 1000);
   });
