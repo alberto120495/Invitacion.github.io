@@ -19,6 +19,7 @@ body {
     margin: 0;
   }
   .fondo-fijo {
+  position: relative;
     background-image: url('media/fondo2.jpg'); /* Cambia por tu imagen */
     background-attachment: fixed;
     background-size: cover;
@@ -33,6 +34,7 @@ body {
     color: white;
     padding: 2rem;
   }
+   
   
   
   .encabezado-xv {
