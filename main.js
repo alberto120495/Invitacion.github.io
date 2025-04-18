@@ -119,3 +119,17 @@ document.getElementById('btnInvitacion').addEventListener('click', () => {
   function closeRSVP() {
     document.getElementById("rsvp-modal").style.display = "none";
   }
+
+ 
+  document.addEventListener("scroll", () => {
+    const section = document.querySelector(".seccion-compartir");
+    const bg = section.querySelector(".parallax-bg-compartir");
+    const speed = 0.4;
+
+    const rect = section.getBoundingClientRect();
+    const offset = window.scrollY + rect.top;
+    const scrollY = window.scrollY;
+    const distance = scrollY - offset;
+
+    bg.style.transform = `translateY(${distance * speed}px)`;
+  });

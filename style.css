@@ -21,7 +21,6 @@ body {
 .fondo-fijo {
   position: relative;
   background-image: url("media/fondo2.jpg"); /* Cambia por tu imagen */
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
@@ -195,7 +194,6 @@ h1 {
   background-image: url("media/fondo3.jpg"); /* Cambia por tu imagen */
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   color: white;
   width: 100%;
   table-layout: fixed;
@@ -932,33 +930,44 @@ img {
 .seccion-compartir {
   margin-top: 20px;
   position: relative;
-  background-image: url("media/card1.jpg"); /* Cambia por tu imagen */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   padding: 80px 20px;
-  position: relative;
   color: white;
   text-align: center;
   font-family: "Great Vibes", cursive;
   border-radius: 10px;
+  overflow: hidden; /* importante para recortar el fondo */
 }
 
-.seccion-compartir::before {
+.parallax-bg-compartir {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-image: url("media/card1.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  will-change: transform;
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+  border-radius: 10px;
+}
+
+.parallax-bg-compartir::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(34, 0, 51, 0.2); /* capa oscura semitransparente */
-  z-index: 0;
-  border-radius: 10px;
+  background: rgba(34, 0, 51, 0.2); /* capa oscura */
+  z-index: 1;
 }
 
 .contenido-compartir {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
@@ -1090,7 +1099,6 @@ img {
   background-image: url("media/card5.jpg"); /* Cambia por tu imagen */
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   padding: 80px 20px;
   color: white;
   text-align: center;
@@ -1156,4 +1164,3 @@ img {
     animation-range: entry 25% cover 50%;
     animation-fill-mode: both;
   }
-
