@@ -104,11 +104,11 @@ body {
 }
 
 .mariposa-izq {
-  left: -70px;
+  left: -40px;
 }
 
 .mariposa-der {
-  right: -70px;
+  right: -40px;
 }
 
 /* Responsive */
@@ -191,31 +191,53 @@ h1 {
 
 .calendar {
   position: relative;
-  background-image: url("media/fondo3.jpg"); /* Cambia por tu imagen */
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   color: white;
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  border: 1px solid transparent;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  text-align: center;
+  padding: 80px 20px;
   border-radius: 10px;
   z-index: 1;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.calendar::before {
-  content: "";
+/* Fondo que se moverá */
+.parallax-bg-calendar {
+  background-image: url("media/card3.jpg"); /* cambia por tu imagen */
+  background-size: cover;
+  background-position: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(34, 0, 51, 0.07); /* capa oscura semitransparente */
-  z-index: -1;
+  z-index: 0;
+  transition: transform 0.1s ease-out;
+}
+
+.capa-oscura-calendar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.233); /* Ajusta la opacidad si lo deseas */
+  z-index: 1;
   border-radius: 10px;
 }
+
+/* Asegura que el contenido esté encima de la capa oscura */
+.calendar > *:not(.parallax-bg-calendar):not(.capa-oscura-calendar) {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+
+
+
 
 .countdown {
   display: flex;
@@ -337,13 +359,25 @@ h1 {
 
 .seccion-vestimenta {
   position: relative;
-  background-image: url("media/noche.png"); /* Cambia por tu imagen */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 80px 20px;
+  overflow: hidden;
   color: white;
   text-align: center;
+  padding: 80px 20px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.parallax-bg-vestimenta{
+  background-image: url("media/noche.png"); /* cambia por tu imagen */
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: transform 0.1s ease-out;
 }
 
 .capa-oscura {
@@ -412,10 +446,7 @@ h1 {
   margin-top: 15px;
   margin-bottom: 15px;
   position: relative;
-  background-image: url("media/fondo.jpg"); /* Cambia por tu imagen */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -425,6 +456,19 @@ h1 {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   gap: 40px;
+}
+
+.parallax-bg-regalos{
+  background-image: url("media/fondo.jpg"); /* cambia por tu imagen */
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: transform 0.1s ease-out;
 }
 
 .seccion-regalos h2 {
@@ -1096,15 +1140,28 @@ img {
 
 .seccion-familia {
   position: relative;
-  background-image: url("media/card5.jpg"); /* Cambia por tu imagen */
-  background-size: cover;
-  background-position: center;
   padding: 80px 20px;
+  overflow: hidden;
   color: white;
   text-align: center;
   margin-top: 30px;
 }
 
+.parallax-bg-familia {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-image: url("media/card5.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  will-change: transform;
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+  border-radius: 10px;
+}
 .familia-contenido {
   display: flex;
   flex-direction: row;
@@ -1143,7 +1200,7 @@ img {
   font-size: 1.2rem;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
-
+/*
 @keyframes show {
   from {
     opacity: 0;
@@ -1156,7 +1213,7 @@ img {
 }
 
 
-  img, h2, h3{
+h2, h3{
     view-timeline-name: --image;
     view-timeline-axis: block;
     animation-timeline: --image;
@@ -1164,3 +1221,15 @@ img {
     animation-range: entry 25% cover 50%;
     animation-fill-mode: both;
   }
+    */
+
+    .reveal {
+      opacity: 0;
+      transform: scale(0.25);
+      transition: all 1s ease;
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: scale(1);
+    }

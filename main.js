@@ -122,14 +122,48 @@ document.getElementById('btnInvitacion').addEventListener('click', () => {
 
  
   document.addEventListener("scroll", () => {
-    const section = document.querySelector(".seccion-compartir");
-    const bg = section.querySelector(".parallax-bg-compartir");
-    const speed = 0.4;
+    const parallaxSections = [
+      { sectionClass: ".seccion-compartir", bgClass: ".parallax-bg-compartir", speed: 0.4 },
+      { sectionClass: ".seccion-familia", bgClass: ".parallax-bg-familia", speed: 0.4 },
+      { sectionClass: ".calendar", bgClass: ".parallax-bg-calendar", speed: 0.4 },
+      { sectionClass: ".seccion-vestimenta", bgClass: ".parallax-bg-vestimenta", speed: 0.4 },
+      { sectionClass: ".seccion-regalos", bgClass: ".parallax-bg-regalos", speed: 0.4 },
 
-    const rect = section.getBoundingClientRect();
-    const offset = window.scrollY + rect.top;
-    const scrollY = window.scrollY;
-    const distance = scrollY - offset;
 
-    bg.style.transform = `translateY(${distance * speed}px)`;
+
+      // Agrega más secciones aquí si necesitas
+      // { sectionClass: ".seccion-otra", bgClass: ".parallax-bg-otra", speed: 0.4 },
+    ];
+  
+    parallaxSections.forEach(({ sectionClass, bgClass, speed }) => {
+      const section = document.querySelector(sectionClass);
+      if (!section) return;
+  
+      const bg = section.querySelector(bgClass);
+      if (!bg) return;
+  
+      const rect = section.getBoundingClientRect();
+      const offset = window.scrollY + rect.top;
+      const scrollY = window.scrollY;
+      const distance = scrollY - offset;
+  
+      bg.style.transform = `translateY(${distance * speed}px)`;
+    });
+  });
+  
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.4 // puedes ajustar este valor para que aparezca antes o después
+    });
+
+    reveals.forEach((el) => observer.observe(el));
   });
