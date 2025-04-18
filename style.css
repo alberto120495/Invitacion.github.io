@@ -13,7 +13,7 @@
 body {
   margin: 0;
   font-family: "Raleway", sans-serif;
-  background: linear-gradient(to bottom right, #e6ccff, #ffffff);
+  background: linear-gradient(to bottom right, #e6ccff,rgb(66, 58, 58));
   color: #5e3a87;
   overflow-x: hidden;
   margin: 0;
@@ -880,12 +880,7 @@ img {
 /* Asegúrate de que .main-content tenga position: relative */
 .main-content {
   min-height: 100vh;
-  position: relative;
   background-image: url("media/fondo4.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* si estás haciendo efecto parallax */
-  background-position: center;
   z-index: 1;
 }
 
@@ -1152,7 +1147,7 @@ img {
   }
 }
 
-/*
+
   img, h2, h3{
     view-timeline-name: --image;
     view-timeline-axis: block;
@@ -1161,4 +1156,4 @@ img {
     animation-range: entry 25% cover 50%;
     animation-fill-mode: both;
   }
-    */
+
