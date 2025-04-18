@@ -48,6 +48,7 @@ document.getElementById("rsvp-modal").addEventListener("click", function(event) 
 
 const audio = document.getElementById("audio");
 const playPause = document.getElementById("play");
+audio.volume = 0.2;
 
 playPause.addEventListener("click", () => {
   if (audio.paused || audio.ended) {
