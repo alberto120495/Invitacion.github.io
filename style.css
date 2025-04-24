@@ -213,7 +213,7 @@ h1 {
   left: 0;
   width: 100%;
   height: 130%; /* o incluso 150% si se necesita más margen */
-  background-image: url("media/card3.jpg");
+  background-image: url("media/card2.jpg");
   background-size: cover;
   background-position: center;
   z-index: 0;
