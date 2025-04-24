@@ -82,18 +82,13 @@ body {
   padding: 0 1rem;
 }
 
-.nombre-xv {
-  font-size: clamp(1.5rem, 6vw, 2.5rem); /* Se adapta al tamaño de pantalla */
-  white-space: normal; /* Permite que se divida si es necesario */
-  display: inline-block;
-  color: #fff;
-}
+
 
 .subtitulo-xv {
   display: block;
   color: #a66bbe;
   margin-top: 2rem;
-  font-size: clamp(1.5rem, 6vw, 2.5rem); /* Se adapta al tamaño de pantalla */
+  font-size: clamp(1.5rem, 6vw, 4rem); /* Se adapta al tamaño de pantalla */
 }
 
 /* Mariposas alrededor del círculo */
@@ -134,8 +129,12 @@ body {
     height: 350px;
   }
   .titulo-xv {
+    font-size: 55px !important;
+  }
+  .subtitulo-xv {
     font-size: 40px !important;
   }
+  
 }
 
 *,
@@ -192,28 +191,36 @@ h1 {
 
 .calendar {
   position: relative;
+  padding: 80px 20px;
   overflow: hidden;
   color: white;
   text-align: center;
-  padding: 0 20px;
-  border-radius: 10px;
-  z-index: 1;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 30px;
 }
+
+
+.calendar h3 {
+  font-family: "Tangerine", cursive;
+  font-size: 40px !important;
+  
+}
+
 
 /* Fondo que se moverá */
 .parallax-bg-calendar {
-  background-image: url("media/card3.jpg"); /* cambia por tu imagen */
-  background-size: cover;
-  background-position: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 130%; /* o incluso 150% si se necesita más margen */
+  background-image: url("media/card3.jpg");
+  background-size: cover;
+  background-position: center;
   z-index: 0;
+  will-change: transform;
+  transform: translateY(0);
   transition: transform 0.1s ease-out;
+  border-radius: 10px;
 }
 
 .capa-oscura-calendar {
@@ -299,24 +306,51 @@ h1 {
   }
 }
 
-.seccion-ubicacion {
-  margin: 40px auto;
-  overflow: hidden;
-}
 
-.ubicacion-overlay {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
 
-.seccion-ubicacion h2 {
-  font-family: "Great Vibes", cursive;
-  font-size: 38px !important;
-  color: #b25288;
+.calendar h2 {
+  font-family: "Tangerine", cursive;
+  font-size: 40px !important;
+  font-weight: 700 !important;
+  color: #fff;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.644);
   margin-bottom: 10px;
-  margin-top: 0;
+}
+
+
+
+.seccion-ubicacion {
+  position: relative;
+  padding: 80px 20px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Fondo parallax */
+.parallax-bg-ubicacion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%; /* o incluso 150% si se necesita más margen */
+  background-image: url("media/card4.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  will-change: transform;
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+  border-radius: 10px;
+}
+
+
+
+/* Contenido principal */
+.info-ubicacion {
+  position: relative;
+  z-index: 2;
 }
 
 .info-ubicacion p {
@@ -347,12 +381,28 @@ h1 {
   background-color: #5e2e86;
 }
 
+/* Botón de Confirmar Asistencia */
+.rsvp-btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background-color: #a66bbe;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rsvp-btn:hover {
+  background-color: #8d57aa;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
-  .seccion-ubicacion h2 {
-    font-size: 28px;
-  }
-
   .info-ubicacion p {
     font-size: 16px;
   }
@@ -361,7 +411,13 @@ h1 {
     font-size: 14px;
     padding: 10px 16px;
   }
+
+  .rsvp-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
+
 
 .seccion-vestimenta {
   position: relative;
@@ -477,12 +533,6 @@ h1 {
   transition: transform 0.1s ease-out;
 }
 
-.seccion-regalos h2 {
-  font-family: "Great Vibes", cursive;
-  font-size: 40px;
-  margin-bottom: 30px;
-  color: #b25288;
-}
 
 .iconos-regalo {
   font-size: 60px;
@@ -494,6 +544,7 @@ h1 {
 }
 
 .seccion-regalos p {
+  font-family: "Playwrite AU SA", cursive;
   max-width: 600px;
   margin: 0 auto 20px auto;
   font-size: 18px;
@@ -651,6 +702,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .player {
@@ -978,14 +1030,17 @@ img {
 }
 
 .seccion-compartir {
-  margin-top: 20px;
   position: relative;
-  padding: 80px 20px;
-  color: white;
-  text-align: center;
   font-family: "Great Vibes", cursive;
   border-radius: 10px;
-  overflow: hidden; /* importante para recortar el fondo */
+  
+  position: relative;
+  padding: 80px 20px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+  
 }
 
 .parallax-bg-compartir {
@@ -1138,11 +1193,63 @@ img {
   border-top: 2px dashed #fff;
   font-family: "Cinzel", serif; /* o la fuente que estés usando */
 }
+.mensaje-boleto h2 {
+  font-family: "Playwrite AU SA", cursive;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.644);
+  margin-bottom: 10px;
+}
 
 .mensaje-boleto p {
   margin: 0;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
+
+.seccion-mensaje {
+  position: relative;
+  padding: 80px 20px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.parallax-bg-mensaje {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-image: url("media/card4.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  will-change: transform;
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+  border-radius: 10px;
+}
+.mensaje-contenido {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.texto-mensaje {
+  text-align: center;
+  color: #fff;
+  font-family:  "Playwrite AU SA", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 .seccion-familia {
   position: relative;
@@ -1151,6 +1258,8 @@ img {
   color: white;
   text-align: center;
   margin-top: 30px;
+  margin-bottom: 30px;
+
 }
 
 .parallax-bg-familia {
@@ -1179,6 +1288,9 @@ img {
   position: relative;
   z-index: 1;
 }
+
+
+
 
 .imagen-familia img.imagen-redonda {
   width: 240px;
@@ -1232,7 +1344,7 @@ h2, h3{
     .reveal {
       opacity: 0;
       transform: scale(0.25);
-      transition: all 1s ease;
+      transition: all 1.5s ease;
     }
     
     .reveal.visible {

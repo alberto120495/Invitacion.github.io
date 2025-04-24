@@ -129,6 +129,9 @@ document.getElementById('btnInvitacion').addEventListener('click', () => {
       { sectionClass: ".calendar", bgClass: ".parallax-bg-calendar", speed: 0.4 },
       { sectionClass: ".seccion-vestimenta", bgClass: ".parallax-bg-vestimenta", speed: 0.4 },
       { sectionClass: ".seccion-regalos", bgClass: ".parallax-bg-regalos", speed: 0.4 },
+      { sectionClass: ".seccion-mensaje", bgClass: ".parallax-bg-mensaje", speed: 0.4 },
+      { sectionClass: ".seccion-ubicacion", bgClass: ".parallax-bg-ubicacion", speed: 0.4 },
+
 
 
 
